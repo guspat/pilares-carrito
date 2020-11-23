@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <title>Carrito de Compras</title>
+</head>
+
+<body onload="start()">
+
+    <header>
+        <div class="container">
+            <div class="row align-items-stretch justify-content-between">
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+
+
+                    <div class="collapse navbar-collapse col-sm-4" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <img src="img/carrito.png" class="nav-link dropdown-toggle img-fluid" height="70px" width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
+                                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                    <table id="lista-carrito" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                    <a href="#" id="vaciar-carrito" class="btn btn-danger btn-block">Vaciar Carrito</a>
+                                    <a href="#" id="procesar-pedido" class="btn btn-success btn-block">Procesar
+                                        Compra</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="clockdate" class="col-sm-4">
+                        <div>
+                            <div id="clock"></div>
+                            <div id="date"></div>
+                        </div>
+                    </div>
+
+                    <a class="navbar-brand col-sm-4 text-right" href="#"><img src="img/logo pilares.png" width="140px" href="#"></img>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 my-4 mx-auto text-center">
+            <h1 class="display-4 mt-4">Lista de Productos</h1>
+            <p class="lead">Selecciona uno de nuestros productos y agregalo al carrito de compras.</p>
+        </div>
+
+        <div class="container" id="lista-productos">
+
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa de centro Verónica</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/1.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">5000</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Cubierta tipo marmol</li>
+                            <li>COLOR ARENA</li>
+                            <li>Está fabricada con madera industrial, un material resistente y ligero.</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="1">Agregar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa de Centro Brunosovich</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/2.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">2160</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Madera</li>
+                            <li>COLOR NEGRO, BLANCO, PINO Y ROBLE OSCURO</li>
+                            <li>Mesa De Madera Sólida.</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="2">Agregar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa de Centro</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/3.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">1099</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>La cubierta está hecha con la combinación de dos resistentes materiales</li>
+                            <li>COLOR BLANCO Y SALMÓN</li>
+                            <li>Se trata de madera industrial y melamina</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="3">Agregar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa de Centro Grou</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/4.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">3500</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Contemporáneo</li>
+                            <li>COLOR NOGAL</li>
+                            <li>Madera Tabaco</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="4">Agregar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa de Centro Patrick</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/5.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">2769</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Vintage</li>
+                            <li>COLOR TECA</li>
+                            <li>Madera Industrial</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="5">Agregar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa Gusti</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/6.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">3599</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Mesa de café, mesa de centro de diseño.</li>
+                            <li>COLOR CAOBA MARRÓN</li>
+                            <li>Moderno y dinámico, Madera.</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="6">Agregar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa de Centro</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/7.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">4299</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Moderno</li>
+                            <li>COLOR NOGAL, CAOBA MARRÓN, PINO</li>
+                            <li>Madera Industrial </li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="7">Agregar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa Mambolilli</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/8.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">869</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Mesa de Centro de Diseño</li>
+                            <li>COLOR NEGRO, MARRÓN Y NOGAL</li>
+                            <li>Madera Coprimida</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="8">Agregar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa de centro Peterson</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/9.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">5397</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Diseño Moderno</li>
+                            <li>COLOR NEGRO, BLANCO, GRIS, NOGAL Y ROBLE DORADO</li>
+                            <li>Madera de pino</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="9">Agregar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa de Centro Guesle</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/10.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">4299</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Mesa contemporánea</li>
+                            <li>COLOR PLATEADO, NOGAL Y CAOBA MARRÓN</li>
+                            <li>Materiales dinámicos y resistentes</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="7">Agregar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa de Centro</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/11.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">1869</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Madera</li>
+                            <li>COLOR NEGRO, PINO, NOGAL Y MARRON</li>
+                            <li>Madera</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="8">Agregar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa Brugehert</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/12.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">5397</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Mesa Dinámica</li>
+                            <li>COLOR NEGRO, BLANCO, NOGAL, CAOBA MARRÓN</li>
+                            <li>Semi madera </li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="9">Agregar</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa Paheas</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/13.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">4299</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Mesa de diseño</li>
+                            <li>COLOR BLANCO, PINO, CAOBA, NEGRO Y TECA</li>
+                            <li>Madera industrial</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="7">Agregar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Mesa Cestro</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/14.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">869</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Moderno y dinámico</li>
+                            <li>COLOR PALISANDRO, PINO, NOGAL Y CAOBA CIRUELA</li>
+                            <li>Madera</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="8">Agregar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">MESA BRUGES</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/15.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">2869</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Vintage</li>
+                            <li>COLOR NEGRO, BLANCO, CAOBA Y PINO</li>
+                            <li>Madera de Pino</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-warning agregar-carrito" data-id="8">Agregar</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>
+
+
+</body>
+
+</html>

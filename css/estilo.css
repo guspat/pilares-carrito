@@ -1,0 +1,19 @@
+#cargando {
+    display: none;
+}
+
+#clock {
+    font-size: 25px;
+    text-shadow: 0px 0px 2px #fff;
+    color: #ffc107;
+}
+
+#clock span {
+    color: #ffc107;
+    text-shadow: 0px 0px 2px #fff;
+    font-size: 20px;
+}
+
+#clockdate {
+    text-align: center;
+}
